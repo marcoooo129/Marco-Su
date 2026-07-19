@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f6f5f0"/>
+  <polygon points="84,92 248,58 326,187 258,326 99,349 32,211" fill="#ff5a36"/>
+  <polygon points="935,321 1101,279 1182,401 1116,550 948,570 873,444" fill="#315cff"/>
+  <circle cx="1037" cy="121" r="52" fill="#141412"/>
+  <text x="600" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="84" font-weight="700" fill="#141412">MARCO SU</text>
+  <text x="600" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#6f706b">Independent Maker · Vibe Coder · Florence</text>
+</svg>
