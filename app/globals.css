@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 默认 = 开灯 / 米白（保持原样） */
 :root {
   --page: #0d0c0f;
   --ink: #f1f0ed;
@@ -11,8 +12,12 @@
   --accent: #21a35c;
   --hero: #aaa9a6;
   --hero-ink: #111014;
+  --hero-dim: rgba(17, 16, 20, 0.58);
   --paper: #b9b9b5;
   --paper-ink: #111014;
+  --hair: rgba(17, 16, 20, 0.16);
+  --dim: rgba(17, 16, 20, 0.56);
+  --body: rgba(17, 16, 20, 0.84);
   --z-base: 0;
   --z-content: 10;
   --z-overlay: 20;
@@ -21,16 +26,21 @@
   --z-intro: 50;
 }
 
+/* 关灯 / 全黑：整站压到近黑，文字翻成浅色，电视屏幕在暗房里发光 */
 :root[data-theme="light"] {
-  --page: #b6b6b3;
-  --ink: #111014;
-  --muted: #545257;
-  --line: rgba(0, 0, 0, 0.13);
-  --grid: rgba(0, 0, 0, 0.055);
-  --hero: #e2e1dc;
-  --hero-ink: #111014;
-  --paper: #efeee9;
-  --paper-ink: #111014;
+  --page: #060607;
+  --ink: #f1f0ed;
+  --muted: #6f6d72;
+  --line: rgba(255, 255, 255, 0.1);
+  --grid: rgba(255, 255, 255, 0.04);
+  --hero: #08080a;
+  --hero-ink: #f1f0ed;
+  --hero-dim: rgba(255, 255, 255, 0.55);
+  --paper: #0b0b0d;
+  --paper-ink: #f1f0ed;
+  --hair: rgba(255, 255, 255, 0.14);
+  --dim: rgba(255, 255, 255, 0.5);
+  --body: rgba(255, 255, 255, 0.82);
 }
 
 * {
@@ -446,7 +456,7 @@ a:focus-visible {
 }
 
 .hero-side-copy span {
-  color: rgba(17, 16, 20, 0.56);
+  color: var(--hero-dim);
 }
 
 /* 3D 台面：边沿高光 + 立面自上而下渐暗，电视下方有接触阴影 */
@@ -496,7 +506,7 @@ a:focus-visible {
 }
 
 .hero-clock {
-  color: rgba(17, 16, 20, 0.62);
+  color: var(--hero-dim);
 }
 
 .crt-3d {
@@ -580,7 +590,7 @@ a:focus-visible {
   display: flex;
   gap: 9px;
   align-items: flex-end;
-  color: rgba(17, 16, 20, 0.78);
+  color: var(--hero-dim);
   font-size: 12px;
   letter-spacing: 0.04em;
   white-space: nowrap;
@@ -1289,10 +1299,7 @@ a:focus-visible {
   transition: background-color 800ms ease, color 800ms ease;
 }
 
-.about-section {
-  --hair: rgba(17, 16, 20, 0.16);
-  --dim: rgba(17, 16, 20, 0.56);
-}
+/* --hair / --dim 现由主题变量提供，关灯时自动翻成浅色 */
 
 .about-intro {
   padding-bottom: 16vh;
@@ -1410,7 +1417,7 @@ a:focus-visible {
   margin: 0;
   font-size: clamp(14px, 1.15vw, 18px);
   line-height: 1.6;
-  color: rgba(17, 16, 20, 0.82);
+  color: var(--body);
 }
 
 /* Notes / 写作清单 */
@@ -1476,7 +1483,7 @@ a:focus-visible {
   margin: 0;
   font-size: clamp(13px, 1.1vw, 17px);
   line-height: 1.55;
-  color: rgba(17, 16, 20, 0.78);
+  color: var(--body);
 }
 
 .note-meta {
