@@ -972,8 +972,9 @@ a:focus-visible {
   visibility: hidden;
 }
 
+/* 始终独占一行、内部不折行：绿色词打字变长时不再从上一行掉下来"跳行" */
 .dynamic-word {
-  display: inline-block;
+  display: block;
   color: var(--accent);
   white-space: nowrap;
 }
@@ -1991,7 +1992,7 @@ a:focus-visible {
   }
 
   .manifesto-title {
-    font-size: clamp(38px, 10.5vw, 60px);
+    font-size: clamp(22px, 6.3vw, 36px);
   }
 
   .manifesto-top span:last-child {
@@ -2021,11 +2022,11 @@ a:focus-visible {
   }
 
   .about-title {
-    font-size: 16vw;
+    font-size: 11vw;
   }
 
   .about-statement {
-    font-size: 8.5vw;
+    font-size: 5.6vw;
   }
 
   .contact-inner h2 {
