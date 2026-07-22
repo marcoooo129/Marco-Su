@@ -207,9 +207,10 @@ function CRTModel({ progressRef, theme, onThemeToggle }: SceneProps) {
             aria-pressed={theme === "light"}
             data-cursor="GO"
           />
+          {/* 箭头尖端固定在 (26,14)（=旋钮），弧线向右下扫出，文字落在电视下方 */}
           <div className="knob-note" aria-hidden="true">
-            <svg viewBox="0 0 96 52" role="presentation">
-              <path d="M94 48C56 48 38 40 26 14" />
+            <svg viewBox="0 0 96 78" role="presentation">
+              <path d="M94 74C52 74 34 56 26 14" />
               <path d="M32 20l-6-6-5 7" />
             </svg>
             <span>Switch Day ’N’ Night</span>

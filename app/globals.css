@@ -583,10 +583,13 @@ a:focus-visible {
   pointer-events: auto;
 }
 
+/* 箭头尖端必须落在锚点（旋钮中心）上：SVG 宽 62px / viewBox 96×52，
+   箭头顶点在 viewBox (26,14) → 距 SVG 左上 (16.8, 9.0)px，
+   故整体左移/上移这个量，箭头才真正指向按钮 */
 .knob-note {
   position: absolute;
-  top: -4px;
-  left: 12px;
+  top: -9px;
+  left: -17px;
   display: flex;
   gap: 9px;
   align-items: flex-end;
@@ -604,8 +607,9 @@ a:focus-visible {
   stroke-width: 1.2;
 }
 
+/* 文字贴在弧线末端 */
 .knob-note span {
-  transform: translateY(4px);
+  transform: translateY(3px);
 }
 
 .crt-computer {
