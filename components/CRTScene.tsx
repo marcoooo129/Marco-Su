@@ -205,17 +205,30 @@ function CRTModel({ progressRef, theme, onThemeToggle }: SceneProps) {
         <primitive object={model} name="crt-model" />
         <ScreenSurface />
       </group>
-      {/* 标注挂在旋钮的 3D 位置上，随电视一起旋转缩放 */}
+      {/* 点击热区用 3D 射线拾取，而不是 CSS 变换过的 DOM 按钮——
+          后者的浏览器命中测试会和视觉位置错位，导致点旋钮上方的空白才生效 */}
+      <mesh
+        position={KNOB_POS}
+        onClick={(event) => {
+          event.stopPropagation();
+          if (diveAmount(progressRef.current) > 0.06) return;
+          onThemeToggle();
+        }}
+        onPointerOver={() => {
+          if (diveAmount(progressRef.current) > 0.06) return;
+          document.body.style.cursor = "pointer";
+        }}
+        onPointerOut={() => {
+          document.body.style.cursor = "";
+        }}
+      >
+        <sphereGeometry args={[0.05, 16, 16]} />
+        <meshBasicMaterial transparent opacity={0} depthWrite={false} />
+      </mesh>
+
+      {/* 标注纯装饰，不参与点击 */}
       <Html transform position={KNOB_POS} scale={0.113} zIndexRange={[12, 11]} style={{ pointerEvents: "none" }}>
         <div className="knob-anchor" ref={noteRef}>
-          <button
-            type="button"
-            className="knob-hit focus-ring"
-            onClick={onThemeToggle}
-            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-            aria-pressed={theme === "light"}
-            data-cursor="GO"
-          />
           {/* 箭头尖端固定在 (26,14)（=旋钮），弧线向右下扫出，文字落在电视下方 */}
           <div className="knob-note" aria-hidden="true">
             <svg viewBox="0 0 96 78" role="presentation">
@@ -249,6 +262,18 @@ function ScreenProbe() {
         inner: inner?.position.toArray().map((n) => +n.toFixed(3)),
         screenWorld: sc?.toArray().map((n) => +n.toFixed(3)),
         camera: camera.position.toArray().map((n) => +n.toFixed(3)),
+        // 旋钮热区球体投影到屏幕像素，用来核对点击判定落点
+        knobScreen: (() => {
+          const knob = outer?.children.find(
+            (c) => c.type === "Mesh" && (c as THREE.Mesh).geometry?.type === "SphereGeometry",
+          );
+          if (!knob) return null;
+          const p = knob.getWorldPosition(new THREE.Vector3()).project(camera);
+          return [
+            Math.round(((p.x + 1) / 2) * window.innerWidth),
+            Math.round(((1 - p.y) / 2) * window.innerHeight),
+          ];
+        })(),
       });
     };
 
@@ -407,6 +432,10 @@ export default function CRTScene({ progressRef, theme, onThemeToggle }: ScenePro
 
   return (
     <div className="crt-stage" ref={stageRef}>
+      {/* 3D 射线拾取覆盖鼠标/触摸；这个隐藏按钮保证键盘和读屏也能切换主题 */}
+      <button type="button" className="sr-only" onClick={onThemeToggle} aria-pressed={theme === "light"}>
+        Switch to {theme === "dark" ? "light" : "dark"} theme
+      </button>
       <LoadingOverlay />
       <Canvas
         className="crt-canvas"

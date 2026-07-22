@@ -569,18 +569,11 @@ a:focus-visible {
   font-family: "IBM Plex Mono", monospace;
 }
 
-.knob-hit {
-  position: absolute;
-  top: -26px;
-  left: -26px;
-  width: 52px;
-  height: 52px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: transparent;
-  cursor: pointer;
-  pointer-events: auto;
+/* 标注纯装饰：整棵子树都不接收点击。否则 SVG 线条会盖在旋钮上，
+   把本该交给 3D 射线拾取的点击吃掉（表现为“点按钮没反应、点旁边空白才灵”） */
+.knob-anchor,
+.knob-anchor * {
+  pointer-events: none !important;
 }
 
 /* 箭头尖端必须落在锚点（旋钮中心）上：SVG 宽 62px / viewBox 96×52，
