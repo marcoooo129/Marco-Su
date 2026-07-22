@@ -955,6 +955,10 @@ a:focus-visible {
   position: relative;
   z-index: var(--z-content);
   display: grid;
+  /* minmax(0,1fr)：不让隐藏占位层里的 nowrap 长词把列撑得比容器还宽，
+     否则整段文字会按超宽列排版并被 overflow:hidden 裁掉 */
+  grid-template-columns: minmax(0, 1fr);
+  overflow-wrap: break-word;
   max-width: min(1180px, 72vw);
   margin: 0;
   font-family: "Space Mono", monospace;
@@ -1802,8 +1806,14 @@ a:focus-visible {
 
   .manifesto-section {
     min-height: auto;
-    padding-top: 140px;
+    /* 加上安全区，避免顶栏文字被固定导航压住 */
+    padding-top: calc(150px + env(safe-area-inset-top));
     padding-bottom: 130px;
+  }
+
+  /* 手机上放开不换行，否则长词会溢出被裁 */
+  .dynamic-word {
+    white-space: normal;
   }
 
   .manifesto-layout {
@@ -2022,11 +2032,12 @@ a:focus-visible {
   }
 
   .about-title {
-    font-size: 11vw;
+    font-size: clamp(30px, 9.4vw, 42px);
   }
 
   .about-statement {
-    font-size: 5.6vw;
+    font-size: clamp(17px, 4.8vw, 21px);
+    line-height: 1.24;
   }
 
   .contact-inner h2 {
