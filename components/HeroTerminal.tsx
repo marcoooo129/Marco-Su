@@ -31,10 +31,8 @@ export function HeroTerminal({ theme, onThemeToggle }: HeroTerminalProps) {
     if (!section) return;
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const sync = () => {
-      const width = section.clientWidth || window.innerWidth;
-      setUse3D(width >= 768 && !reduced.matches);
-    };
+    // 手机端也用真 3D 电视（和 PC 一致），只有明确要求减动效时才降级
+    const sync = () => setUse3D(!reduced.matches);
 
     sync();
     const observer = new ResizeObserver(sync);

@@ -296,6 +296,20 @@ function ScreenProbe() {
   return null;
 }
 
+// 相机随视口比例调整：竖屏（手机）时电视更容易被左右裁切，
+// 按宽高比把相机往后拉，保证电视完整入镜、四周留白匀称
+function ResponsiveCamera() {
+  const { camera, size } = useThree();
+  useEffect(() => {
+    const aspect = size.width / Math.max(1, size.height);
+    // 横屏 ~6.5；越竖（aspect 越小）越往后拉
+    const z = aspect >= 1 ? 6.5 : 6.5 + (1 - aspect) * 5.4;
+    camera.position.set(0, 0, z);
+    camera.updateProjectionMatrix();
+  }, [camera, size.width, size.height]);
+  return null;
+}
+
 function Lighting() {
   return (
     <>
@@ -392,6 +406,7 @@ export default function CRTScene({ progressRef, theme, onThemeToggle }: ScenePro
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
         camera={{ position: [0, 0, 6.5], fov: 34 }}
       >
+        <ResponsiveCamera />
         <Lighting />
         <Suspense fallback={null}>
           <CRTModel progressRef={progressRef} theme={theme} onThemeToggle={onThemeToggle} />

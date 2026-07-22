@@ -21,7 +21,6 @@ export function GlitchTransition() {
     const hero = document.querySelector<HTMLElement>(".hero-section");
     if (!overlay || !canvas || !hero) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    if (window.matchMedia("(max-width: 767px)").matches) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
