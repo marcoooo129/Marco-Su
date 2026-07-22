@@ -1770,11 +1770,16 @@ a:focus-visible {
   }
 
   .hero-side-copy {
-    right: 18px;
+    right: auto;
     bottom: 24px;
     left: 18px;
     width: auto;
-    max-width: 260px;
+    max-width: 52%;
+  }
+
+  /* 手机端隐藏冗长定位语（manifesto 里已完整呈现），只留地点，避免与时钟挤在一起 */
+  .hero-side-copy p {
+    display: none;
   }
 
   .hero-bottom {
@@ -1782,6 +1787,7 @@ a:focus-visible {
     bottom: 24px;
     left: auto;
     flex-direction: column;
+    align-items: flex-end;
     gap: 6px;
   }
 
@@ -2024,6 +2030,41 @@ a:focus-visible {
 
   .contact-inner h2 {
     font-size: 10.2vw;
+  }
+
+  /* 社交卡片 3 列在窄屏会把账号截断 → 改成整行横排：左标签、右账号 */
+  .contact-socials {
+    grid-template-columns: 1fr;
+  }
+
+  .social-link {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 14px;
+    padding: 18px 4px;
+  }
+
+  .social-label {
+    flex-shrink: 0;
+  }
+
+  .social-handle {
+    font-size: 16px;
+    text-align: right;
+  }
+
+  .social-arrow {
+    display: none;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .site-footer > div:nth-child(2) {
+    justify-self: start;
   }
 }
 
