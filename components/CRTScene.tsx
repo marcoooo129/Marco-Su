@@ -135,6 +135,7 @@ function CRTModel({ progressRef, theme, onThemeToggle }: SceneProps) {
   const groupRef = useRef<THREE.Group>(null);
   const mouse = useRef({ x: 0, y: 0 });
   const inZoneRef = useRef(false);
+  const noteRef = useRef<HTMLDivElement>(null);
 
   // 用 window 级监听而不是 R3F 的 pointer：光标压在旋钮按钮（DOM 元素）上时
   // canvas 收不到 pointermove，R3F 的 pointer 会停在过期值，禁区判定就失灵了
@@ -188,6 +189,14 @@ function CRTModel({ progressRef, theme, onThemeToggle }: SceneProps) {
     group.position.x = REST_OFFSET.x * (1 - dive);
     group.position.y = REST_OFFSET.y * (1 - dive);
     group.position.z = dive * 0.35;
+
+    // 标注只是静止时的操作提示：一开始推进就迅速淡出，
+    // 否则它会在 9 倍放大过程中一直挂在画面上、和旋钮越拉越远
+    if (noteRef.current) {
+      const opacity = Math.max(0, 1 - dive * 10);
+      noteRef.current.style.opacity = String(opacity);
+      noteRef.current.style.pointerEvents = opacity > 0.6 ? "auto" : "none";
+    }
   });
 
   return (
@@ -198,7 +207,7 @@ function CRTModel({ progressRef, theme, onThemeToggle }: SceneProps) {
       </group>
       {/* 标注挂在旋钮的 3D 位置上，随电视一起旋转缩放 */}
       <Html transform position={KNOB_POS} scale={0.113} zIndexRange={[12, 11]} style={{ pointerEvents: "none" }}>
-        <div className="knob-anchor">
+        <div className="knob-anchor" ref={noteRef}>
           <button
             type="button"
             className="knob-hit focus-ring"
