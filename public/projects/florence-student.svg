@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Florence Student platform preview</title>
+  <desc id="desc">A student course discovery interface with reviews and practical information.</desc>
+  <rect width="1600" height="1000" fill="#e5e3dc"/>
+  <path d="M0 0h1600v1000H0z" fill="none" stroke="#bab8b1" stroke-width="2"/>
+  <path d="M0 160h1600M0 840h1600M130 0v1000M1470 0v1000" stroke="#c8c6bf"/>
+  <text x="130" y="82" fill="#111014" font-family="monospace" font-weight="bold" font-size="25">FLORENCE / STUDENT</text>
+  <text x="1268" y="82" fill="#65635f" font-family="monospace" font-size="15">COURSES  RESOURCES  IT</text>
+  <text x="130" y="248" fill="#6b6965" font-family="monospace" font-size="14">BUILT AROUND STUDENT EXPERIENCE / PROTOTYPE</text>
+  <text x="130" y="330" fill="#111014" font-family="monospace" font-weight="bold" font-size="68">Find the course.</text>
+  <text x="130" y="404" fill="#111014" font-family="monospace" font-weight="bold" font-size="68">Know the context.</text>
+  <rect x="130" y="474" width="720" height="74" fill="#111014"/>
+  <text x="166" y="520" fill="#f0eee9" font-family="monospace" font-size="18">Search by course, professor or programme...</text>
+  <rect x="866" y="474" width="74" height="74" fill="#21a35c"/>
+  <path d="M890 498l26 26m0-26l-26 26" stroke="#111014" stroke-width="3"/>
+  <g transform="translate(130 640)">
+    <rect width="410" height="150" fill="#f3f1ea" stroke="#b6b4ad"/>
+    <text x="24" y="34" fill="#77746f" font-family="monospace" font-size="12">COMMUNICATION / LM-92</text>
+    <text x="24" y="74" fill="#111014" font-family="monospace" font-weight="bold" font-size="23">Media &amp; Society</text>
+    <text x="24" y="112" fill="#55534f" font-family="monospace" font-size="13">Workload  3.8  /  Clarity  4.2</text>
+    <circle cx="370" cy="34" r="12" fill="#21a35c"/>
+  </g>
+  <g transform="translate(568 640)">
+    <rect width="410" height="150" fill="#f3f1ea" stroke="#b6b4ad"/>
+    <text x="24" y="34" fill="#77746f" font-family="monospace" font-size="12">LANGUAGE / INTERNATIONAL</text>
+    <text x="24" y="74" fill="#111014" font-family="monospace" font-weight="bold" font-size="23">Italian Practice</text>
+    <text x="24" y="112" fill="#55534f" font-family="monospace" font-size="13">Notes  /  Experiences  /  Tips</text>
+    <circle cx="370" cy="34" r="12" fill="#111014"/>
+  </g>
+  <g transform="translate(1006 640)">
+    <rect width="464" height="150" fill="#111014"/>
+    <text x="24" y="34" fill="#858287" font-family="monospace" font-size="12">FLORENCE BASICS / 03</text>
+    <text x="24" y="74" fill="#f1f0ed" font-family="monospace" font-weight="bold" font-size="23">Practical guides</text>
+    <text x="24" y="112" fill="#aaa7ab" font-family="monospace" font-size="13">Housing / documents / study life</text>
+  </g>
+  <text x="130" y="914" fill="#6b6965" font-family="monospace" font-size="13">FIRENZE / ITALY / 2025—26</text>
+  <text x="1370" y="914" fill="#111014" font-family="monospace" font-size="13">02 / 04</text>
+</svg>

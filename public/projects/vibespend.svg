@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">VibeSpend finance experiment preview</title>
+  <desc id="desc">A dark experimental dashboard for voice expense capture and AI categorisation.</desc>
+  <rect width="1600" height="1000" fill="#121214"/>
+  <path d="M0 0h1600v1000H0z" fill="none" stroke="#333336" stroke-width="2"/>
+  <path d="M0 250h1600M0 500h1600M0 750h1600M400 0v1000M800 0v1000M1200 0v1000" stroke="#202023"/>
+  <text x="70" y="76" fill="#f0eee9" font-family="monospace" font-weight="bold" font-size="25">VIBESPEND / LAB</text>
+  <text x="1320" y="76" fill="#777478" font-family="monospace" font-size="14">JUL / 2025</text>
+  <text x="70" y="192" fill="#777478" font-family="monospace" font-size="13">THIS MONTH / EXPERIMENTAL VIEW</text>
+  <text x="70" y="300" fill="#f0eee9" font-family="monospace" font-weight="bold" font-size="104">€ 1,284</text>
+  <text x="565" y="286" fill="#21a35c" font-family="monospace" font-size="18">−12.4%</text>
+  <text x="70" y="350" fill="#777478" font-family="monospace" font-size="14">Spending, seen as a conversation—not a spreadsheet.</text>
+  <g transform="translate(70 432)">
+    <rect width="820" height="390" fill="#1a1a1d" stroke="#343438"/>
+    <text x="32" y="48" fill="#777478" font-family="monospace" font-size="13">VOICE CAPTURE / ACTIVE</text>
+    <circle cx="410" cy="194" r="96" fill="none" stroke="#21a35c"/>
+    <circle cx="410" cy="194" r="68" fill="none" stroke="#465d63"/>
+    <circle cx="410" cy="194" r="10" fill="#21a35c"/>
+    <path d="M214 194h42l18-58 32 126 34-158 38 170 28-90 26 42 28-72 28 76 28-112 36 132 32-56h58" fill="none" stroke="#f0eee9" stroke-width="3"/>
+    <text x="270" y="338" fill="#b4b1b5" font-family="monospace" font-size="15">“Lunch near Santa Croce, twelve euro.”</text>
+  </g>
+  <g transform="translate(930 432)">
+    <rect width="600" height="390" fill="#dedbd4"/>
+    <text x="32" y="48" fill="#5d5b5e" font-family="monospace" font-size="13">AI CATEGORY / FOOD</text>
+    <text x="32" y="106" fill="#111014" font-family="monospace" font-weight="bold" font-size="42">Everyday</text>
+    <text x="32" y="152" fill="#111014" font-family="monospace" font-weight="bold" font-size="42">rhythms</text>
+    <circle cx="442" cy="202" r="104" fill="none" stroke="#aaa7a1" stroke-width="38"/>
+    <path d="M442 98a104 104 0 0 1 89 158" fill="none" stroke="#21a35c" stroke-width="38"/>
+    <text x="404" y="214" fill="#111014" font-family="monospace" font-size="24">38%</text>
+    <text x="32" y="344" fill="#5d5b5e" font-family="monospace" font-size="13">REFLECT / ADJUST / CONTINUE</text>
+  </g>
+  <text x="70" y="914" fill="#777478" font-family="monospace" font-size="13">VOICE → CATEGORY → REPORT / CONCEPT BUILD</text>
+  <rect x="1452" y="882" width="78" height="46" fill="#21a35c"/>
+  <text x="1482" y="912" fill="#111014" font-family="monospace" font-size="13">04</text>
+</svg>

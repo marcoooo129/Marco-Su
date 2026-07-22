@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">dimmi macOS language app preview</title>
+  <desc id="desc">A monochrome language assistant interface with context and saved expressions.</desc>
+  <rect width="1600" height="1000" fill="#c7c5bf"/>
+  <path d="M0 0h1600v62H0z" fill="#0f1012"/>
+  <circle cx="36" cy="31" r="8" fill="#77777a"/><circle cx="64" cy="31" r="8" fill="#77777a"/><circle cx="92" cy="31" r="8" fill="#21a35c"/>
+  <text x="128" y="38" fill="#ecebe7" font-family="monospace" font-size="17">DIMMI / EXPRESSION WORKSPACE</text>
+  <rect x="90" y="116" width="1420" height="786" fill="#111216"/>
+  <rect x="90" y="116" width="296" height="786" fill="#191a1e"/>
+  <text x="132" y="174" fill="#21a35c" font-family="monospace" font-size="19">dimmi</text>
+  <text x="132" y="238" fill="#74757b" font-family="monospace" font-size="14">TODAY</text>
+  <rect x="118" y="264" width="240" height="68" fill="#24262a"/>
+  <text x="138" y="292" fill="#eeece7" font-family="monospace" font-size="15">At the pharmacy</text>
+  <text x="138" y="316" fill="#77787d" font-family="monospace" font-size="12">Italian / everyday</text>
+  <text x="132" y="382" fill="#77787d" font-family="monospace" font-size="14">SAVED EXPRESSIONS</text>
+  <text x="138" y="430" fill="#b7b5b0" font-family="monospace" font-size="14">Mi servirebbe...</text>
+  <text x="138" y="474" fill="#b7b5b0" font-family="monospace" font-size="14">Come posso dire...</text>
+  <text x="138" y="518" fill="#b7b5b0" font-family="monospace" font-size="14">Vorrei capire...</text>
+  <line x1="386" y1="116" x2="386" y2="902" stroke="#35363a"/>
+  <text x="442" y="176" fill="#77787d" font-family="monospace" font-size="14">CONTEXT / 01</text>
+  <text x="442" y="238" fill="#f0eee9" font-family="monospace" font-size="36">What do you want to say?</text>
+  <rect x="442" y="286" width="990" height="126" fill="#1c1d21" stroke="#35363a"/>
+  <text x="478" y="340" fill="#c9c7c2" font-family="monospace" font-size="17">I need to explain that the medicine made me feel dizzy,</text>
+  <text x="478" y="374" fill="#c9c7c2" font-family="monospace" font-size="17">but I don't want to sound too dramatic.</text>
+  <rect x="442" y="458" width="990" height="286" fill="#e4e2dc"/>
+  <text x="478" y="508" fill="#55555a" font-family="monospace" font-size="13">A NATURAL WAY TO SAY IT</text>
+  <text x="478" y="578" fill="#111216" font-family="monospace" font-size="28">“Da quando ho preso il farmaco mi gira</text>
+  <text x="478" y="618" fill="#111216" font-family="monospace" font-size="28">un po’ la testa. È una reazione normale?”</text>
+  <line x1="478" y1="670" x2="1368" y2="670" stroke="#b0aea9"/>
+  <text x="478" y="710" fill="#66666a" font-family="monospace" font-size="13">Clear / polite / everyday Italian</text>
+  <rect x="1230" y="788" width="202" height="58" fill="#21a35c"/>
+  <text x="1285" y="824" fill="#101114" font-family="monospace" font-weight="bold" font-size="15">SAVE PHRASE</text>
+  <text x="442" y="838" fill="#77787d" font-family="monospace" font-size="12">AI-assisted expression / verify before use</text>
+</svg>
