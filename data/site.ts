@@ -1,3 +1,17 @@
+/**
+ * [L3 契约] 全站唯一内容源（跨模块）
+ * [INPUT]  无（纯数据，手工维护）
+ * [OUTPUT] site —— 被几乎所有幕消费：
+ *          projects → ProjectsRail + CRTScene 屏幕轮播
+ *          story/writing/education/languages → AboutSection
+ *          writing[].slug → app/notes/[slug] 的 generateStaticParams（改 slug = 改已上线 URL）
+ *          socials/email → ContactSection
+ *          tagline/introLine → IntroSequence
+ *          manifesto → ManifestoSection
+ * [POS]    所有用户可见文案的唯一来源。组件内禁止写死文案。
+ *          `as const` 保证字面量类型；新增字段记得同步消费方。
+ */
+
 export type Project = {
   title: string;
   number: string;

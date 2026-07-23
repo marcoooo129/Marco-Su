@@ -1,3 +1,16 @@
+/**
+ * [L3 契约] 全站唯一设计令牌源（跨模块）
+ * [INPUT]  无
+ * [OUTPUT] 两套主题的 CSS 变量 + 全部区块样式
+ *          开灯（默认 :root）= 米白；关灯（:root[data-theme="light"]）= 近黑
+ *          令牌：--page --ink --muted --line --grid --accent
+ *               --hero --hero-ink --hero-dim --paper --paper-ink
+ *               --hair --dim --body        ← 文字/发丝线，关灯时必须一起翻色
+ *               --z-base/content/overlay/nav/cursor/intro
+ * [POS]    组件禁止新增硬编码颜色；新颜色必须两套主题都加。
+ *          只加背景不加文字色 = 关灯后黑底黑字（已发生过）。
+ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

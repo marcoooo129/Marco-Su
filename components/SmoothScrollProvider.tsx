@@ -1,5 +1,16 @@
 "use client";
 
+/**
+ * [L3 契约] 全站滚动引擎（跨模块）
+ * [INPUT]  无外部依赖；由 PortfolioExperience 包裹全站
+ * [OUTPUT] window.__lenis —— 全局唯一 Lenis 实例。
+ *          任何组件的程序化滚动都必须走它，不要用 window.scrollTo。
+ *          消费方：IntroSequence(stop/start)、FixedNavigation(scrollTo)、
+ *                 GlitchTransition(scrollTo)、AboutSection 等
+ * [POS]    位于所有滚动动画之下；ScrollTrigger 依赖它的 scroll 事件同步。
+ *          卸载时必须 destroy 并 delete window.__lenis，否则热更新会留下多个 RAF 循环。
+ */
+
 import { useEffect, type ReactNode } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";

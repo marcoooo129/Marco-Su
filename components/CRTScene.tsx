@@ -1,5 +1,21 @@
 "use client";
 
+/**
+ * [L3 契约] 3D 主角场景（跨模块）
+ * [INPUT]  progressRef —— HeroTerminal 用 ScrollTrigger 喂入的 0→1 推进进度
+ *          theme / onThemeToggle —— PortfolioExperience 的主题状态
+ *          /models/crt-tv.glb（2.6MB，勿replace未压缩版）
+ * [OUTPUT] 渲染 3D 电视；旋钮点击回调 onThemeToggle；window.__crtState()（调试探针）
+ * [POS]    首页第 02 幕。Canvas 透明，背景由 CSS --hero 提供（"关灯"才能让墙变黑）。
+ *
+ * 不变量（改动前先读）：
+ * - 点击热区必须是 3D 射线拾取的 mesh，不可改回 CSS 变换的 DOM 按钮
+ * - <Html> 装饰层整棵子树 pointer-events:none
+ * - frameloop 由 IntersectionObserver 门控，离屏必须 "never"
+ * - 缩放绕"屏幕中心"发生：内层 group 已把屏幕中心移到原点
+ * - 相机 z 随视口宽高比自适应，竖屏拉远防裁切
+ */
+
 import { Suspense, useEffect, useMemo, useRef, useState, type MutableRefObject } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Html, useGLTF, useProgress } from "@react-three/drei";
